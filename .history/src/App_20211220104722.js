@@ -24,7 +24,7 @@ function App() {
         })
       })
       .then(() => {
-        setStarted(started)
+        await setStarted(started)
       })
   }
 

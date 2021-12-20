@@ -24,7 +24,7 @@ function App() {
         })
       })
       .then(() => {
-        setStarted(started)
+        await setStarted(started)
       })
   }
 
@@ -33,8 +33,9 @@ function App() {
       {started ? (
         <p>Uploading</p>
       ) : (
-        <input type="file" onChange={handleFile} />
+
       )}
+      <input type="file" onChange={handleFile} />
       <button onClick={handleUpload}>Upload</button>
     </div>
   );

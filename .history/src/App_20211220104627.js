@@ -13,7 +13,7 @@ function App() {
   }
 
   const handleUpload = async () => {
-    await setStarted(!started)
+    
     await store.ref(`images/${image.name}`).put(image)
     await store.ref("images")
       .child(image.name)
@@ -23,18 +23,11 @@ function App() {
           image: url
         })
       })
-      .then(() => {
-        setStarted(started)
-      })
   }
 
   return (
     <div className="App">
-      {started ? (
-        <p>Uploading</p>
-      ) : (
-        <input type="file" onChange={handleFile} />
-      )}
+      <input type="file" onChange={handleFile} />
       <button onClick={handleUpload}>Upload</button>
     </div>
   );

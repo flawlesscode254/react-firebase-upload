@@ -23,18 +23,12 @@ function App() {
           image: url
         })
       })
-      .then(() => {
-        setStarted(started)
-      })
+      .t
   }
 
   return (
     <div className="App">
-      {started ? (
-        <p>Uploading</p>
-      ) : (
-        <input type="file" onChange={handleFile} />
-      )}
+      <input type="file" onChange={handleFile} />
       <button onClick={handleUpload}>Upload</button>
     </div>
   );
